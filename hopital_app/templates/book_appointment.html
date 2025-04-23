@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('https://images.unsplash.com/photo-1588776814546-ec7a5d1b81f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+        background-size: cover;
+        background-position: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 80px auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #2c3e50;
+    }
+
+    select,
+    input[type="date"],
+    input[type="time"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button.btn-success {
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button.btn-success:hover {
+        background-color: #218838;
+    }
+
+    a.btn-link {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a.btn-link:hover {
+        text-decoration: underline;
+    }
+</style>
+<h2>Book Appointment</h2>
+<form method="POST">
+    <select class="form-control mb-2" name="patient">
+        {% for p in patients %}
+            <option value="{{ p.id }}">{{ p.name }}</option>
+        {% endfor %}
+    </select>
+    <select class="form-control mb-2" name="doctor">
+        {% for d in doctors %}
+            <option value="{{ d.id }}">{{ d.name }}</option>
+        {% endfor %}
+    </select>
+    <input class="form-control mb-2" type="date" name="date">
+    <input class="form-control mb-2" type="time" name="time">
+    <button class="btn btn-success">Book</button>
+</form>
+<a href="/dashboard" class="btn btn-link mt-2">Back</a>
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #e0f7fa, #ffffff);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            color: #004d40;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: #00695c;
+        }
+
+        form {
+            background: #ffffffcc;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #e0f2f1;
+            color: #004d40;
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            background: linear-gradient(to right, #43cea2, #185a9d);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background: linear-gradient(to right, #2bc0e4, #1c92d2);
+        }
+
+        a.btn-link {
+            margin-top: 20px;
+            display: inline-block;
+            color: #00796b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.btn-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f4f6f8; padding: 20px;">
+    <h2 style="color: #333;">Add Patient</h2>
+    <form method="POST" action="/add_patient" style="margin-bottom: 20px;">
+        <input class="form-control mb-2" type="text" name="name" placeholder="Name" style="margin-bottom: 10px; padding: 8px; width: 100%;">
+        <input class="form-control mb-2" type="number" name="age" placeholder="Age" style="margin-bottom: 10px; padding: 8px; width: 100%;">
+        <input class="form-control mb-2" type="text" name="condition" placeholder="Condition" style="margin-bottom: 10px; padding: 8px; width: 100%;">
+        <button class="btn btn-success" type="submit" style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px;">Add</button>
+    </form>
+
+    
+
+    <!-- View Patients -->
+    <a href="/patients" class="btn btn-link" style="display: inline-block; margin: 10px 10px 10px 0; color: #007bff; text-decoration: none;">View Patients</a>
+
+    <!-- Book Appointment -->
+    <a href="/book_appointment" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #17a2b8; color: white; text-decoration: none; border-radius: 4px;">Book Appointment</a>
+
+    <!-- Add Doctor -->
+    <a href="/add_doctor" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 4px;">Add Doctor</a>
+
+    <!-- View Appointments -->
+    <a href="/appointments" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #ffc107; color: black; text-decoration: none; border-radius: 4px;">View Appointments</a>
+
+    <a href="/" style="display: inline-block; margin: 10px; padding: 10px 20px; background-color: #ffc107; color: black; text-decoration: none; border-radius: 4px;">Go Back</a>
+</body>
+
+
+{% endblock %}

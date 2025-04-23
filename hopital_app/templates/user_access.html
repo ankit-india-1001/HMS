@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .access-container {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: #f2f8ff;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .access-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .access-container p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 30px;
+    }
+    .access-container .btn {
+        display: inline-block;
+        width: 45%;
+        margin: 0 7px;
+        padding: 5px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        background-color: #007bff9b;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .access-container .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<div class="access-container">
+    <h2>Access Appointments</h2>
+    <p>Please log in or register to manage and book appointments.</p>
+    <div>
+    <a href="/" class="btn">Login As Admin/Office Personal</a>
+    </div>
+    <div>
+    <a href="/register" class="btn">Register As Admin/Office Personal</a>
+    </div>
+    <a href="/book_appointment" class="btn btn-success">Book Appointment</a>
+</div>
+{% endblock %}
